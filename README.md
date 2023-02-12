@@ -5,7 +5,7 @@
 O objectivo deste projecto é desenvolver uma solução completa de Business Intelligence (BI), aplicando as principais etapas de uma solucação BI.
 Desde a definição e entedimento do problema, processo de ETL e Visualização de dados.
 
-# Ferramentras utilizadas
+# Ferramentas utilizadas
 
 ETL: SQL Server Integration Service (SSIS)
 
