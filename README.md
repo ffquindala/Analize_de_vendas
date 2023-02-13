@@ -70,6 +70,7 @@ pergunta 10 - Que interferência tiveram os mercados para a sustentabilidade da 
 
 A modelagem consiste na ilustração gráfica do funcionamemnto de qualque sistema de informação, para facilitar o seu entendido e funcionamento
 por parte de quem alheio ao sistema e ajuda na manuntenção do mesmo para futuras escalabidade.
+A imagem abaixo ilustra o funcionamento desde projecto em particular.
 
 ![modelagem_analise_vendas](https://user-images.githubusercontent.com/80399273/218474813-e7056f0d-212e-4134-b177-145fe77b4b61.png)
 
