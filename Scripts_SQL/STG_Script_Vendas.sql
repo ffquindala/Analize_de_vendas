@@ -49,22 +49,28 @@ CREATE TABLE stg_dim_producto
 );
 
 /* the STAGING AREA Dimension table for: DATE (Sales Date) */
-CREATE TABLE stg_dim_date 
+CREATE TABLE stg_dim_data 
 (	
-	sk_datA INT PRIMARY KEY,
+	sk_date INT PRIMARY KEY,
 	proper_date DATE NOT NULL,
-	data_completa NVARCHAR(50) NOT NULL,
-	numero_mes INT NOT NULL,
-	numero_dia_semana INT NOT NULL,
-	nome_dia_semana NVARCHAR(50) NOT NULL,
+	full_date NVARCHAR(50) NOT NULL,
+	monthday_number INT NOT NULL,
+	weekday_number INT NOT NULL,
+	weekday_name NVARCHAR(50) NOT NULL,
 	day_name_short NVARCHAR(50) NOT NULL,
-	weekday_type NVARCHAR(10) NOT NULL,	
+	weekday_type NVARCHAR(10) NOT NULL,
+	is_special NVARCHAR(30) NOT NULL,
+	month_number INT NOT NULL,
 	month_name NVARCHAR(50) NOT NULL,
-	numero_trimestre INT NOT NULL,
-	nome_trimestre_short NVARCHAR(10) NOT NULL, -- TRIM 1
-	numero_semestre INT NOT NULL,
-	semester_name_short NVARCHAR(10) NOT NULL, --SEM 1
+	month_name_short NVARCHAR(50) NOT NULL,
+	quarter_number INT NOT NULL,
+	quarter_name_short NVARCHAR(10) NOT NULL,
+	quarter_name NVARCHAR(50) NOT NULL,
+	semester_number INT NOT NULL,
+	semester_name_short NVARCHAR(10) NOT NULL,
+	semester_name NVARCHAR(50) NOT NULL,
 	year INT NOT NULL
+	
 );
 /* the STAGING AREA Fact table for: VENDA */
 CREATE TABLE stg_fact_venda
