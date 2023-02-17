@@ -63,7 +63,8 @@ CREATE TABLE stg_dim_date
 CREATE TABLE stg_fact_venda
 (
 	fk_cliente				NVARCHAR(20)	NOT NULL,
-	fk_pedido				NVARCHAR(25)		NOT NULL,
+	fk_pedido				NVARCHAR(25)	NOT NULL,
+	fk_producto				NVARCHAR(25)	NOT NULL,
 	fk_date					DATE			NOT NULL,
 	quantidade				INT				NOT NULL,
 	custo_envio				DECIMAL(18,4)	NOT NULL,
@@ -72,7 +73,7 @@ CREATE TABLE stg_fact_venda
 	(
 		fk_cliente		ASC,
 		fk_pedido		ASC,
-		fk_producto
+		fk_producto		ASC,
 		fk_date			ASC
 	)
 );
