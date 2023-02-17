@@ -42,7 +42,7 @@ CREATE TABLE stg_dim_pedido
 CREATE TABLE stg_dim_producto 
 (
 	bk_producto				NVARCHAR(25)	PRIMARY KEY,
-	poducto_descricao		NVARCHAR(100)	NOT NULL,
+	poducto_descricao		NVARCHAR(255)	NOT NULL,
 	categoria				NVARCHAR(50)	NOT NULL,
 	subucategoria			NVARCHAR(30)	NOT NULL,
 	

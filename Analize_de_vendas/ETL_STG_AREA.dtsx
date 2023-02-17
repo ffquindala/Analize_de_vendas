@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{9D184239-10CE-4F14-942C-6AE9A433EF45}">
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{E94CCE37-4765-49C8-9D6A-A5EA6F1D89CD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -597,6 +597,62 @@
               DTS:TextQualified="True"
               DTS:ObjectName="Nome Produto"
               DTS:DTSID="{7E16F8CD-FEEA-4FE5-8DFB-7344D2F44DA6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 4]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{19EBE1DE-7FA5-44FF-8CF3-64349797995A}"
+      DTS:ObjectName="Flat File Connection Manager 4">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2070"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="D:\MEUS_PROJECTOS\BI_PROJECTS\Analize_de_vendas\Source_data\Produtos.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID Produto"
+              DTS:DTSID="{2EA61519-63ED-4F06-A4C4-3A8FD827B128}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Categoria"
+              DTS:DTSID="{1FC6101E-139C-4C66-8E50-98971BA14093}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SubCategoria"
+              DTS:DTSID="{77C00896-880C-4024-88A6-5822D919EE16}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nome Produto"
+              DTS:DTSID="{080D69E2-33F2-4D28-AD5D-877FFACE75FF}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -2961,13 +3017,454 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source"
-                  componentClassID="Microsoft.ExcelSource"
-                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                  description="Excel Source"
-                  name="Excel Source"
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Converter o nome do producto"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto.Inputs[Derived Column Input].Columns[Nome Produto]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Nome Produto"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output].Columns[Nome Produto]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto.Outputs[Derived Column Output].Columns[New_ProductoName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="255"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto.Outputs[Derived Column Output].Columns[New_ProductoName]"
+                          name="New_ProductoName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output].Columns[Nome Produto]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">[Nome Produto]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="2070"
+                  name="CSV File Stg_Dim_Producto"
                   usesDispositions="true"
                   version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 4]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 4]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].Columns[ID Produto]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].ExternalColumns[ID Produto]"
+                          length="50"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].Columns[ID Produto]"
+                          name="ID Produto"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].Columns[Categoria]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].ExternalColumns[Categoria]"
+                          length="50"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].Columns[Categoria]"
+                          name="Categoria"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].Columns[SubCategoria]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].ExternalColumns[SubCategoria]"
+                          length="50"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].Columns[SubCategoria]"
+                          name="SubCategoria"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].Columns[Nome Produto]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].ExternalColumns[Nome Produto]"
+                          length="255"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].Columns[Nome Produto]"
+                          name="Nome Produto"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].ExternalColumns[ID Produto]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="ID Produto" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].ExternalColumns[Categoria]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Categoria" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].ExternalColumns[SubCategoria]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="SubCategoria" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].ExternalColumns[Nome Produto]"
+                          dataType="wstr"
+                          length="255"
+                          name="Nome Produto" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="65001"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Inputs[Data Conversion Input].Columns[ID Produto]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ID Produto"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output].Columns[ID Produto]" />
+                        <inputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Inputs[Data Conversion Input].Columns[Categoria]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Categoria"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output].Columns[Categoria]" />
+                        <inputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Inputs[Data Conversion Input].Columns[SubCategoria]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SubCategoria"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output].Columns[SubCategoria]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Outputs[Data Conversion Output].Columns[New_ID_Produto]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="25"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Outputs[Data Conversion Output].Columns[New_ID_Produto]"
+                          name="New_ID_Produto"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output].Columns[ID Produto]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Outputs[Data Conversion Output].Columns[New_Categoria]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Outputs[Data Conversion Output].Columns[New_Categoria]"
+                          name="New_Categoria"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output].Columns[Categoria]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Outputs[Data Conversion Output].Columns[New_SubCategoria]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="30"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Outputs[Data Conversion Output].Columns[New_SubCategoria]"
+                          name="New_SubCategoria"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output].Columns[SubCategoria]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
                   <properties>
                     <property
                       dataType="System.Int32"
@@ -2976,7 +3473,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">Produtos$</property>
+                      name="OpenRowset">[dbo].[stg_dim_producto]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2987,136 +3484,123 @@
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
-                      dataType="System.String"
-                      description="The variable that contains the SQL command to be executed."
-                      name="SqlCommandVariable"></property>
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">0</property>
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
                     <property
                       dataType="System.String"
-                      description="The mapping from parameters in the SQL command to variables."
-                      name="ParameterMapping"></property>
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 2]"
-                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 2]"
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-5KFLI28\SQLEXPRESS.STG_VENDAS_FEV]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-5KFLI28\SQLEXPRESS.STG_VENDAS_FEV]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
-                  <outputs>
-                    <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output]"
-                      name="Excel Source Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].Columns[ID Produto]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].ExternalColumns[ID Produto]"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].Columns[ID Produto]"
-                          name="ID Produto"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].Columns[Categoria]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].ExternalColumns[Categoria]"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].Columns[Categoria]"
-                          name="Categoria"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].Columns[SubCategoria]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].ExternalColumns[SubCategoria]"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].Columns[SubCategoria]"
-                          name="SubCategoria"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].Columns[Nome Produto]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].ExternalColumns[Nome Produto]"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].Columns[Nome Produto]"
-                          name="Nome Produto"
-                          truncationRowDisposition="FailComponent" />
-                      </outputColumns>
+                  <inputs>
+                    <input
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[New_ID_Produto]"
+                          cachedDataType="wstr"
+                          cachedLength="25"
+                          cachedName="New_ID_Produto"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[bk_producto]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Outputs[Data Conversion Output].Columns[New_ID_Produto]" />
+                        <inputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[New_Categoria]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="New_Categoria"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[categoria]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Outputs[Data Conversion Output].Columns[New_Categoria]" />
+                        <inputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[New_SubCategoria]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="New_SubCategoria"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[subucategoria]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Outputs[Data Conversion Output].Columns[New_SubCategoria]" />
+                        <inputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[New_ProductoName]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="New_ProductoName"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[poducto_descricao]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto.Outputs[Derived Column Output].Columns[New_ProductoName]" />
+                      </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].ExternalColumns[ID Produto]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[bk_producto]"
                           dataType="wstr"
-                          length="255"
-                          name="ID Produto" />
+                          length="25"
+                          name="bk_producto" />
                         <externalMetadataColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].ExternalColumns[Categoria]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[poducto_descricao]"
                           dataType="wstr"
                           length="255"
-                          name="Categoria" />
+                          name="poducto_descricao" />
                         <externalMetadataColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].ExternalColumns[SubCategoria]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[categoria]"
                           dataType="wstr"
-                          length="255"
-                          name="SubCategoria" />
+                          length="50"
+                          name="categoria" />
                         <externalMetadataColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].ExternalColumns[Nome Produto]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[subucategoria]"
                           dataType="wstr"
-                          length="255"
-                          name="Nome Produto" />
+                          length="30"
+                          name="subucategoria" />
                       </externalMetadataColumns>
-                    </output>
+                    </input>
+                  </inputs>
+                  <outputs>
                     <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output]"
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
                       isErrorOut="true"
-                      name="Excel Source Error Output">
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[ID Produto]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[ID Produto]"
-                          name="ID Produto" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[Categoria]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[Categoria]"
-                          name="Categoria" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[SubCategoria]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[SubCategoria]"
-                          name="SubCategoria" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[Nome Produto]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[Nome Produto]"
-                          name="Nome Produto" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -3124,7 +3608,198 @@
                     </output>
                   </outputs>
                 </component>
+                <component
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Inputs[Sort Input].Columns[ID Produto]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ID Produto"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].Columns[ID Produto]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Inputs[Sort Input].Columns[Categoria]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Categoria"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].Columns[Categoria]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Inputs[Sort Input].Columns[SubCategoria]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SubCategoria"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].Columns[SubCategoria]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Inputs[Sort Input].Columns[Nome Produto]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Nome Produto"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].Columns[Nome Produto]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output].Columns[ID Produto]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output].Columns[ID Produto]"
+                          name="ID Produto"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].Columns[ID Produto]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output].Columns[Categoria]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output].Columns[Categoria]"
+                          name="Categoria">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].Columns[Categoria]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output].Columns[SubCategoria]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output].Columns[SubCategoria]"
+                          name="SubCategoria">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].Columns[SubCategoria]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output].Columns[Nome Produto]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output].Columns[Nome Produto]"
+                          name="Nome Produto">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output].Columns[Nome Produto]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
+              <paths>
+                <path
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto.Paths[Data Conversion Output]"
+                  endId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto.Paths[Derived Column Output]"
+                  endId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Derived Column Output"
+                  startId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto.Paths[Flat File Source Output]"
+                  endId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Inputs[Sort Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto.Paths[Sort Output]"
+                  endId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto.Inputs[Derived Column Input]"
+                  name="Sort Output"
+                  startId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort.Outputs[Sort Output]" />
+              </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -4598,7 +5273,7 @@
         <NodeLayout
           Size="185,42"
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto"
-          TopLeft="531,29" />
+          TopLeft="527,28" />
         <NodeLayout
           Size="173,42"
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda"
@@ -4994,11 +5669,155 @@
     design-time-name="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="139,42"
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source"
-          TopLeft="323,126" />
+          Size="208,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto"
+          TopLeft="211,63" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="224,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto"
+          TopLeft="429,233" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination"
+          TopLeft="409,518" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion"
+          TopLeft="421,409" />
+        <EdgeLayout
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto.Paths[Derived Column Output]"
+          TopLeft="541,275">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-42,134"
+              Start="0,0"
+              End="-42,126.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63"
+                    Point2="0,67"
+                    Point3="-4,67" />
+                  <mssgle:LineSegment
+                    End="-38,67" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38,67"
+                    Point2="-42,67"
+                    Point3="-42,71" />
+                  <mssgle:LineSegment
+                    End="-42,126.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto.Paths[Data Conversion Output]"
+          TopLeft="496.75,451">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67"
+              Start="0,0"
+              End="0,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort"
+          TopLeft="302,157" />
+        <EdgeLayout
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto.Paths[Flat File Source Output]"
+          TopLeft="315,105">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36,52"
+              Start="0,0"
+              End="36,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22"
+                    Point2="0,26"
+                    Point3="4,26" />
+                  <mssgle:LineSegment
+                    End="32,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32,26"
+                    Point2="36,26"
+                    Point3="36,30" />
+                  <mssgle:LineSegment
+                    End="36,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto.Paths[Sort Output]"
+          TopLeft="351,199">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="190,34"
+              Start="0,0"
+              End="190,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13"
+                    Point2="0,17"
+                    Point3="4,17" />
+                  <mssgle:LineSegment
+                    End="186,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="186,17"
+                    Point2="190,17"
+                    Point3="190,21" />
+                  <mssgle:LineSegment
+                    End="190,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -5285,7 +6104,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source">
+    design-time-name="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
