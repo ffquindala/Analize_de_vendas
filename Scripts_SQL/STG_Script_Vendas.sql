@@ -72,6 +72,7 @@ CREATE TABLE stg_fact_venda
 	(
 		fk_cliente		ASC,
 		fk_pedido		ASC,
+		fk_producto
 		fk_date			ASC
 	)
 );
