@@ -74,3 +74,14 @@ A imagem abaixo ilustra o funcionamento desde projecto em particular.
 
 ![modelagem_analise_vendas](https://user-images.githubusercontent.com/80399273/218474813-e7056f0d-212e-4134-b177-145fe77b4b61.png)
 
+# Modelagem do Data Warehouse
+
+A modelagem do DW deste projecto seguiu o padrão conhecido como "modelo em estrela ou star schema" baseado em dimensões e factos, um modelo de fácil 
+percepção e escalávelm como se pode observar na imagem abaixo:
+
+![Modelagem_DW](https://user-images.githubusercontent.com/80399273/219516681-169a615e-687a-4e2a-98e2-e23b9917ebd5.jpg)
+
+
+
+
+
