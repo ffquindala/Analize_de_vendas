@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{734B1CA2-E9E6-4442-962E-F7B379067A49}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{9D184239-10CE-4F14-942C-6AE9A433EF45}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -292,6 +292,18 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 2]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{71904C00-1DC6-4415-B7FB-B6B831E6F30F}"
+      DTS:ObjectName="Excel Connection Manager 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\MEUS_PROJECTOS\BI_PROJECTS\Analize_de_vendas\Source_data\Produtos.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Excel Connection to Date source file]"
       DTS:CreationName="EXCEL"
       DTS:DTSID="{C28DDCAF-5165-409C-A32D-533973476649}"
@@ -535,6 +547,62 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 3]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{5555E1F0-8032-47A9-9658-616112F46232}"
+      DTS:ObjectName="Flat File Connection Manager 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2070"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="D:\MEUS_PROJECTOS\BI_PROJECTS\Analize_de_vendas\Source_data\Produtos.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID Produto"
+              DTS:DTSID="{60997FEB-9F64-433C-B94A-677936310C24}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Categoria"
+              DTS:DTSID="{11243398-F1AE-4549-B462-F62C5EDA5D57}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SubCategoria"
+              DTS:DTSID="{F9E338E8-CD95-4EA2-8DA3-A0A7E2108CDA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nome Produto"
+              DTS:DTSID="{7E16F8CD-FEEA-4FE5-8DFB-7344D2F44DA6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SOURCE DB (IMSALES)]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{2C329402-91EF-4895-8BFF-57FB4CCF6803}"
@@ -767,6 +835,7 @@
           DTS:refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
           DTS:DTSID="{9CC14A5D-20EA-49C0-83D7-33602A51F70F}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -778,62 +847,62 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column"
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  name="Derived Column"
+                  name="Convertendo os valores"
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Inputs[Derived Column Input]"
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Inputs[Derived Column Input]"
                       description="Input to the Derived Column Transformation"
                       name="Derived Column Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Inputs[Derived Column Input].Columns[ID Cliente]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Inputs[Derived Column Input].Columns[ID Cliente]"
                           cachedCodepage="65001"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="ID Cliente"
                           lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Flat File Source.Outputs[Flat File Source Output].Columns[ID Cliente]" />
                         <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Inputs[Derived Column Input].Columns[Segmento]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Inputs[Derived Column Input].Columns[Segmento]"
                           cachedCodepage="65001"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Segmento"
                           lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Flat File Source.Outputs[Flat File Source Output].Columns[Segmento]" />
                         <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Inputs[Derived Column Input].Columns[Pais]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Inputs[Derived Column Input].Columns[Pais]"
                           cachedCodepage="65001"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Pais"
                           lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Flat File Source.Outputs[Flat File Source Output].Columns[Pais]" />
                         <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Inputs[Derived Column Input].Columns[Mercado]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Inputs[Derived Column Input].Columns[Mercado]"
                           cachedCodepage="65001"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Mercado"
                           lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Flat File Source.Outputs[Flat File Source Output].Columns[Mercado]" />
                         <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Inputs[Derived Column Input].Columns[Regiao]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Inputs[Derived Column Input].Columns[Regiao]"
                           cachedCodepage="65001"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Regiao"
                           lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Flat File Source.Outputs[Flat File Source Output].Columns[Regiao]" />
                         <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Inputs[Derived Column Input].Columns[Cidade]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Inputs[Derived Column Input].Columns[Cidade]"
                           cachedCodepage="65001"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Cidade"
                           lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Flat File Source.Outputs[Flat File Source Output].Columns[Cidade]" />
                         <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Inputs[Derived Column Input].Columns[Estado]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Inputs[Derived Column Input].Columns[Estado]"
                           cachedCodepage="65001"
                           cachedDataType="str"
                           cachedLength="50"
@@ -845,19 +914,19 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output]"
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output]"
                       description="Default Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       name="Derived Column Output"
-                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Cliente_Id]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Cliente_Id]"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="50"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Cliente_Id]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Cliente_Id]"
                           name="New_Cliente_Id"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -875,12 +944,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Cliente_Name]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Cliente_Name]"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="50"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Cliente_Name]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Cliente_Name]"
                           name="New_Cliente_Name"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -898,12 +967,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Segmento]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Segmento]"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="50"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Segmento]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Segmento]"
                           name="New_Segmento"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -921,12 +990,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Pais]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Pais]"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="50"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Pais]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Pais]"
                           name="New_Pais"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -944,12 +1013,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Mercado]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Mercado]"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="50"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Mercado]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Mercado]"
                           name="New_Mercado"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -967,12 +1036,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Regiao]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Regiao]"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="50"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Regiao]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Regiao]"
                           name="New_Regiao"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -990,12 +1059,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Estado]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Estado]"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="50"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Estado]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Estado]"
                           name="New_Estado"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1013,12 +1082,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Cidade]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Cidade]"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="50"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Cidade]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Cidade]"
                           name="New_Cidade"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1039,23 +1108,23 @@
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Error Output]"
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Error Output]"
                       description="Error Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Derived Column Error Output"
-                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1430,56 +1499,56 @@
                           cachedLength="50"
                           cachedName="New_Cliente_Id"
                           externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[bk_cliente]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Cliente_Id]" />
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Cliente_Id]" />
                         <inputColumn
                           refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[New_Cliente_Name]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="New_Cliente_Name"
                           externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nome_cliente]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Cliente_Name]" />
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Cliente_Name]" />
                         <inputColumn
                           refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[New_Segmento]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="New_Segmento"
                           externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[seguimento]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Segmento]" />
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Segmento]" />
                         <inputColumn
                           refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[New_Pais]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="New_Pais"
                           externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pais]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Pais]" />
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Pais]" />
                         <inputColumn
                           refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[New_Mercado]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="New_Mercado"
                           externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[mercado]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Mercado]" />
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Mercado]" />
                         <inputColumn
                           refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[New_Regiao]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="New_Regiao"
                           externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[regiao]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Regiao]" />
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Regiao]" />
                         <inputColumn
                           refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[New_Estado]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="New_Estado"
                           externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[estado]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Estado]" />
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Estado]" />
                         <inputColumn
                           refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[New_Cidade]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="New_Cidade"
                           externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cidade]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output].Columns[New_Cidade]" />
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output].Columns[New_Cidade]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1557,10 +1626,10 @@
                   refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente.Paths[Derived Column Output]"
                   endId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   name="Derived Column Output"
-                  startId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Outputs[Derived Column Output]" />
+                  startId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente.Paths[Flat File Source Output]"
-                  endId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column.Inputs[Derived Column Input]"
+                  endId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores.Inputs[Derived Column Input]"
                   name="Flat File Source Output"
                   startId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Flat File Source.Outputs[Flat File Source Output]" />
               </paths>
@@ -2889,7 +2958,174 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <pipeline
-              version="1" />
+              version="1">
+              <components>
+                <component
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="Excel Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">Produtos$</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 2]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 2]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].Columns[ID Produto]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].ExternalColumns[ID Produto]"
+                          length="255"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].Columns[ID Produto]"
+                          name="ID Produto"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].Columns[Categoria]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].ExternalColumns[Categoria]"
+                          length="255"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].Columns[Categoria]"
+                          name="Categoria"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].Columns[SubCategoria]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].ExternalColumns[SubCategoria]"
+                          length="255"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].Columns[SubCategoria]"
+                          name="SubCategoria"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].Columns[Nome Produto]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].ExternalColumns[Nome Produto]"
+                          length="255"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].Columns[Nome Produto]"
+                          name="Nome Produto"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].ExternalColumns[ID Produto]"
+                          dataType="wstr"
+                          length="255"
+                          name="ID Produto" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].ExternalColumns[Categoria]"
+                          dataType="wstr"
+                          length="255"
+                          name="Categoria" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].ExternalColumns[SubCategoria]"
+                          dataType="wstr"
+                          length="255"
+                          name="SubCategoria" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Output].ExternalColumns[Nome Produto]"
+                          dataType="wstr"
+                          length="255"
+                          name="Nome Produto" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[ID Produto]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[ID Produto]"
+                          name="ID Produto" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[Categoria]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[Categoria]"
+                          name="Categoria" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[SubCategoria]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[SubCategoria]"
+                          name="SubCategoria" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[Nome Produto]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[Nome Produto]"
+                          name="Nome Produto" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+            </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -4362,7 +4598,7 @@
         <NodeLayout
           Size="185,42"
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto"
-          TopLeft="543,35" />
+          TopLeft="531,29" />
         <NodeLayout
           Size="173,42"
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda"
@@ -4427,35 +4663,35 @@
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\OLE DB Destination"
           TopLeft="232,304" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Derived Column"
-          TopLeft="199,169" />
+          Size="189,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente\Convertendo os valores"
+          TopLeft="212,198" />
         <EdgeLayout
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente.Paths[Flat File Source Output]"
           TopLeft="253.5,118">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="22.5,51"
+              EndConnector="53,80"
               Start="0,0"
-              End="22.5,43.5">
+              End="53,72.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.5" />
+                    End="0,36" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.5"
-                    Point2="0,25.5"
-                    Point3="4,25.5" />
+                    Point1="0,36"
+                    Point2="0,40"
+                    Point3="4,40" />
                   <mssgle:LineSegment
-                    End="18.5,25.5" />
+                    End="49,40" />
                   <mssgle:CubicBezierSegment
-                    Point1="18.5,25.5"
-                    Point2="22.5,25.5"
-                    Point3="22.5,29.5" />
+                    Point1="49,40"
+                    Point2="53,40"
+                    Point3="53,44" />
                   <mssgle:LineSegment
-                    End="22.5,43.5" />
+                    End="53,72.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4466,30 +4702,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente.Paths[Derived Column Output]"
-          TopLeft="276,211">
+          TopLeft="306.5,240">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="41.5,93"
+              EndConnector="11,64"
               Start="0,0"
-              End="41.5,85.5">
+              End="11,56.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.5" />
+                    End="0,28" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,42.5"
-                    Point2="0,46.5"
-                    Point3="4,46.5" />
+                    Point1="0,28"
+                    Point2="0,32"
+                    Point3="4,32" />
                   <mssgle:LineSegment
-                    End="37.5,46.5" />
+                    End="7,32" />
                   <mssgle:CubicBezierSegment
-                    Point1="37.5,46.5"
-                    Point2="41.5,46.5"
-                    Point3="41.5,50.5" />
+                    Point1="7,32"
+                    Point2="11,32"
+                    Point3="11,36" />
                   <mssgle:LineSegment
-                    End="41.5,85.5" />
+                    End="11,56.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4498,6 +4734,13 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="Load Dim Pedido"
+          ParentId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente"
+          FontInfo="{assembly:Null}"
+          Size="120,60"
+          Id="acd04df0-890f-4886-9454-cb1a149de94f"
+          TopLeft="306,26" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -4748,6 +4991,18 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source"
+          TopLeft="323,126" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
     design-time-name="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda">
     <LayoutInfo>
       <GraphLayout
@@ -4815,7 +5070,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4849,7 +5106,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4919,7 +5178,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4953,7 +5214,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5010,6 +5273,19 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
