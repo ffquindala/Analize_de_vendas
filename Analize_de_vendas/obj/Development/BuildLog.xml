@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Analize_de_vendas</Name>
-    <LastWriteTime>2023-02-17T20:42:31.5285898Z</LastWriteTime>
+    <LastWriteTime>2023-02-17T22:45:14.6841205Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>ETL_STG_AREA.dtsx</Name>
-      <LastWriteTime>2023-02-17T21:25:59.3428836Z</LastWriteTime>
+      <LastWriteTime>2023-02-17T22:59:31.6630993Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
