@@ -1,0 +1,1433 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/12/2023 2:35:59 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-5KFLI28"
+  DTS:CreatorName="DESKTOP-5KFLI28\Faustino"
+  DTS:DTSID="{BB95015C-549F-407C-ACC7-4C77E6F95F94}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.948.0"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{8AC5E21A-A885-42A4-B05A-C53D2F3D8D9D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Country List for Supplier Companies.csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{289771FE-A3ED-47A7-8BBE-38C738DD344A}"
+      DTS:ObjectName="Country List for Supplier Companies.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2070"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\temp\Country List for Supplier Companies.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PostalCode"
+              DTS:DTSID="{FF796798-ACD1-4478-B8BB-40570FB2AB20}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{49783E49-DF54-459E-B993-85E4EA17B52B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Region"
+              DTS:DTSID="{ED082F27-5CFA-4847-8FF5-7445EB35A2D3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country"
+              DTS:DTSID="{07EDFA16-3F02-4D29-A480-C4445FA3F1EB}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV flat file connection to Date source]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{DF233A73-ABB8-488D-B2AE-5180FC523270}"
+      DTS:ObjectName="CSV flat file connection to Date source">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2070"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\temp\DIM Date 2017 to 2020 CSV format.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sk_date"
+              DTS:DTSID="{E278066A-5F0C-4AF2-80F8-E866BD699EF2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="proper_date"
+              DTS:DTSID="{39CE3501-709E-45A5-9636-62A442CE7407}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="full_date"
+              DTS:DTSID="{81E82AFB-5E05-4051-A9C1-4FECDAC7A4B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="monthday_number"
+              DTS:DTSID="{7A406258-AA5C-4D2B-BB41-875C73FFE138}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="weekday_number"
+              DTS:DTSID="{FBAFE480-3320-4008-B941-D596A620F29E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="weekday_name"
+              DTS:DTSID="{55E0EA92-10BD-4A04-BC5C-0D335FB416A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="day_name_short"
+              DTS:DTSID="{84EAA7CD-3764-4D04-8DF8-7879253E84CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="weekday_type"
+              DTS:DTSID="{EDD73453-9311-4593-B4E4-CB94C80EEB9C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="is_special"
+              DTS:DTSID="{1ECBDB76-03BB-4F86-BB49-44D7F2E9C895}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="month_number"
+              DTS:DTSID="{6EBC9FFB-0B95-40EA-BF3C-83A0FFCC95C3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="month_name"
+              DTS:DTSID="{57842E9F-DAF0-4D06-9B97-A448225BDF66}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="month_name_short"
+              DTS:DTSID="{E99C63EE-138D-4703-B2A0-A771D3843C11}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="quarter_number"
+              DTS:DTSID="{D4BDE2D9-E6DC-40BF-91CF-DF29D9E82851}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="quarter_name_short"
+              DTS:DTSID="{DF3CBBF6-5477-4D69-8561-E643868F142D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="quarter_name"
+              DTS:DTSID="{93036CAD-8984-4519-8E2D-C53FEA48CAA9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="semester_number"
+              DTS:DTSID="{44775A6D-E637-4DCF-93E8-14D7C437A350}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="semester_name_short"
+              DTS:DTSID="{0A820E16-A822-4774-A100-BCD68B6DFE85}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="semester_name"
+              DTS:DTSID="{847D524E-A9FD-444D-94FB-370D9AAC477E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="year"
+              DTS:DTSID="{E7ED9D65-6B28-4D98-AC8B-2616744AE1D0}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-5KFLI28\SQLEXPRESS.STG_VENDAS_FEV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{382E57AF-DE96-4688-9FB3-BA3F00BE2628}"
+      DTS:ObjectName="DESKTOP-5KFLI28\SQLEXPRESS.STG_VENDAS_FEV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-5KFLI28\SQLEXPRESS;Initial Catalog=STG_VENDAS_FEV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{382E57AF-DE96-4688-9FB3-BA3F00BE2628}DESKTOP-5KFLI28\SQLEXPRESS.STG_VENDAS_FEV;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{2679B982-98A0-409B-A46B-C3AB8468DFC5}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\MEUS_PROJECTOS\BI_PROJECTS\Analize_de_vendas\Source_data\Dim_Date.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection to Date source file]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{C28DDCAF-5165-409C-A32D-533973476649}"
+      DTS:ObjectName="Excel Connection to Date source file">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Temp\DIM Date 2017 to 2020 Excel format.xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B9CDFAE5-E4FF-48A8-B4AF-DAA8698BEECB}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2070"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="D:\MEUS_PROJECTOS\BI_PROJECTS\Analize_de_vendas\Source_data\Vendas.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pedido"
+              DTS:DTSID="{C1F7F036-41D8-4B46-9308-D2CD9CE925F1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cliente"
+              DTS:DTSID="{F52483C7-0D08-4BB1-9F52-E52C33C13A2F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Produto"
+              DTS:DTSID="{C2248E70-EF79-4FDE-ADF1-FC4C0D40D9BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Valor Venda"
+              DTS:DTSID="{A33A21A2-5172-4652-90C6-0B5FEA078B3A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quantidade Vendida"
+              DTS:DTSID="{FB742706-587F-451A-AD26-CC3D92AB73AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Custo Envio"
+              DTS:DTSID="{30FA75F5-2924-4BE8-B6DF-DBF0267FF1AE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SOURCE DB (IMSALES)]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2C329402-91EF-4895-8BFF-57FB4CCF6803}"
+      DTS:ObjectName="SOURCE DB (IMSALES)">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-5KFLI28\SQLEXPRESS;Initial Catalog=IMSALES;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{2C329402-91EF-4895-8BFF-57FB4CCF6803}SOURCE DB (IMSALES);" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Staff territories-regions-country.txt]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{61FA9E52-C49A-4448-9737-5B56764F9F99}"
+      DTS:ObjectName="Staff territories-regions-country.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2070"
+          DTS:Unicode="True"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\temp\Staff territories-regions-country.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StaffID"
+              DTS:DTSID="{23664AE0-EDBB-46F0-A0A2-184AB301130B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{6E0244F5-0918-4AFB-9D09-6C58DB352A77}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{CFBB6D01-8B11-47D3-A15F-0133BA339E81}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TerritoryID"
+              DTS:DTSID="{46A3882C-0BB1-42E9-BED5-AE1B3DF122BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TerritoryDescription"
+              DTS:DTSID="{B5CE50DE-5994-43C5-810D-BDA618CFA59B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegionID"
+              DTS:DTSID="{8E87D992-B5FB-47A0-9409-EC00BCDB35E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegionDescription"
+              DTS:DTSID="{7B59A7A8-3260-45A7-ACDA-A4A28F1ECA70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country"
+              DTS:DTSID="{1C74601D-9041-482E-8F6F-334E91BD829C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{62e6f5a8-a7e4-4389-a0bc-aaa4f4da5ddf}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clear all previous data from ALL Staging Area tables (both Fact and Dimension)">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Delete Dim Cliente"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{bd73738f-78ef-4ed2-bc9f-722bb2a87156}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Delete Dim Cliente"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{382E57AF-DE96-4688-9FB3-BA3F00BE2628}"
+              SQLTask:SqlStatementSource="delete from stg_dim_cliente;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Delete Dim Date"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{ee112e3a-dda3-4fbf-a3f4-aeb34b2101c3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Delete Dim Date"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="4">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{382E57AF-DE96-4688-9FB3-BA3F00BE2628}"
+              SQLTask:SqlStatementSource="delete from stg_dim_date;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Delete Dim Pedido"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{50947315-4749-4275-9c68-45f82703f22a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Delete Dim Pedido"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{382E57AF-DE96-4688-9FB3-BA3F00BE2628}"
+              SQLTask:SqlStatementSource="delete from stg_dim_pedido;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Delete Dim Producto"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9c06752c-06c5-4550-9459-79e9424dc5e8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Delete Dim Producto"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{382E57AF-DE96-4688-9FB3-BA3F00BE2628}"
+              SQLTask:SqlStatementSource="delete from stg_dim_producto;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Truncate Fact Venda"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{7d14fbba-8492-4910-a092-5176ffcc995a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Truncate Fact Venda"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{382E57AF-DE96-4688-9FB3-BA3F00BE2628}"
+              SQLTask:SqlStatementSource="truncate table stg_fact_venda;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E7513E8C-DDC6-4CC3-9EA2-88BC3EB3801E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load all Staging Area tables (both Facts and Dimensions)"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{C4C79242-1087-4876-B831-C70421F610AE}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load all Staging Area tables (both Facts and Dimensions)">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{9CC14A5D-20EA-49C0-83D7-33602A51F70F}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DF Load Dim Cliente"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Date"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{4418B1DD-F561-47F0-ACCC-65CFB7CC2149}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DF Load Dim Date"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Pedido"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{97E674A3-2BF8-4DF3-B7E0-84133E09FD5C}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DF Load Dim Pedido"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{D37EB967-2EA8-42D6-8FB2-2211B82CEEAC}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DF Load Dim Producto"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{25055E04-F3AE-46E0-9256-4F65A1C579C9}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DF Load Fact Venda"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="2070"
+                  name="CSV File Vendas"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Pedido]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].ExternalColumns[Pedido]"
+                          length="50"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Pedido]"
+                          name="Pedido"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Cliente]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].ExternalColumns[Cliente]"
+                          length="50"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Cliente]"
+                          name="Cliente"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Produto]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].ExternalColumns[Produto]"
+                          length="50"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Produto]"
+                          name="Produto"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Valor Venda]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].ExternalColumns[Valor Venda]"
+                          length="50"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Valor Venda]"
+                          name="Valor Venda"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Quantidade Vendida]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].ExternalColumns[Quantidade Vendida]"
+                          length="50"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Quantidade Vendida]"
+                          name="Quantidade Vendida"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Custo Envio]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].ExternalColumns[Custo Envio]"
+                          length="50"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Custo Envio]"
+                          name="Custo Envio"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].ExternalColumns[Pedido]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Pedido" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].ExternalColumns[Cliente]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Cliente" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].ExternalColumns[Produto]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Produto" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].ExternalColumns[Valor Venda]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Valor Venda" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].ExternalColumns[Quantidade Vendida]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Quantidade Vendida" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].ExternalColumns[Custo Envio]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Custo Envio" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="65001"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="Excel File Dim Date"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">Sheet1$</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].Columns[DateDimKey]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[DateDimKey]"
+                          length="255"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].Columns[DateDimKey]"
+                          name="DateDimKey"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].Columns[Proper_Date]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[Proper_Date]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].Columns[Proper_Date]"
+                          name="Proper_Date"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].Columns[month_id]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[month_id]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].Columns[month_id]"
+                          name="month_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].Columns[month_desc]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[month_desc]"
+                          length="255"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].Columns[month_desc]"
+                          name="month_desc"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].Columns[year_id]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[year_id]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].Columns[year_id]"
+                          name="year_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].Columns[day_number_of_month ]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[day_number_of_month ]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].Columns[day_number_of_month ]"
+                          name="day_number_of_month "
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[DateDimKey]"
+                          dataType="wstr"
+                          length="255"
+                          name="DateDimKey" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[Proper_Date]"
+                          dataType="date"
+                          name="Proper_Date" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[month_id]"
+                          dataType="r8"
+                          name="month_id" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[month_desc]"
+                          dataType="wstr"
+                          length="255"
+                          name="month_desc" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[qurater_id]"
+                          dataType="r8"
+                          name="qurater_id" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[qurater_desc]"
+                          dataType="wstr"
+                          length="255"
+                          name="qurater_desc" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[year_id]"
+                          dataType="r8"
+                          name="year_id" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[day_number_of_week]"
+                          dataType="r8"
+                          name="day_number_of_week" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[day_of_week_desc]"
+                          dataType="wstr"
+                          length="255"
+                          name="day_of_week_desc" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[day_number_of_month ]"
+                          dataType="r8"
+                          name="day_number_of_month " />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[day_number_of_year]"
+                          dataType="r8"
+                          name="day_number_of_year" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[week_number_of_year]"
+                          dataType="r8"
+                          name="week_number_of_year" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Output].ExternalColumns[year_month]"
+                          dataType="wstr"
+                          length="255"
+                          name="year_month" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Error Output].Columns[DateDimKey]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Error Output].Columns[DateDimKey]"
+                          name="DateDimKey" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Error Output].Columns[Proper_Date]"
+                          dataType="date"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Error Output].Columns[Proper_Date]"
+                          name="Proper_Date" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Error Output].Columns[month_id]"
+                          dataType="r8"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Error Output].Columns[month_id]"
+                          name="month_id" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Error Output].Columns[month_desc]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Error Output].Columns[month_desc]"
+                          name="month_desc" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Error Output].Columns[year_id]"
+                          dataType="r8"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Error Output].Columns[year_id]"
+                          name="year_id" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Error Output].Columns[day_number_of_month ]"
+                          dataType="r8"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Error Output].Columns[day_number_of_month ]"
+                          name="day_number_of_month " />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Tab Venda STG"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Tab Venda STG"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[stg_fact_venda]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Tab Venda STG.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-5KFLI28\SQLEXPRESS.STG_VENDAS_FEV]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-5KFLI28\SQLEXPRESS.STG_VENDAS_FEV]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Tab Venda STG.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Tab Venda STG.Inputs[OLE DB Destination Input].ExternalColumns[fk_cliente]"
+                          dataType="wstr"
+                          length="20"
+                          name="fk_cliente" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Tab Venda STG.Inputs[OLE DB Destination Input].ExternalColumns[fk_pedido]"
+                          dataType="wstr"
+                          length="25"
+                          name="fk_pedido" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Tab Venda STG.Inputs[OLE DB Destination Input].ExternalColumns[fk_date]"
+                          dataType="dbDate"
+                          name="fk_date" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Tab Venda STG.Inputs[OLE DB Destination Input].ExternalColumns[quantidade]"
+                          dataType="i4"
+                          name="quantidade" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Tab Venda STG.Inputs[OLE DB Destination Input].ExternalColumns[custo_envio]"
+                          dataType="numeric"
+                          name="custo_envio"
+                          precision="18"
+                          scale="4" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Tab Venda STG.Inputs[OLE DB Destination Input].ExternalColumns[valor_venda]"
+                          dataType="numeric"
+                          name="valor_venda"
+                          precision="18"
+                          scale="4" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Tab Venda STG.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Tab Venda STG.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Tab Venda STG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Tab Venda STG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Tab Venda STG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Tab Venda STG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{CAADA8A3-23AF-406C-BE6F-C36F0B021D53}"
+      DTS:From="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load all Staging Area tables (both Facts and Dimensions)" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph">
+        <AnnotationLayout
+          Text="### STAGING AREA ETL ###"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="179,40"
+          Id="7a44f1dd-5844-4cd7-9122-3ec8426dc174"
+          TopLeft="295,14" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Delete Dim Cliente"
+          TopLeft="30,20" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Delete Dim Date"
+          TopLeft="150,108" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Delete Dim Producto"
+          TopLeft="260,23" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Delete Dim Pedido"
+          TopLeft="512,24" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Truncate Fact Venda"
+          TopLeft="363,110" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="746,205"
+          Size="746,248"
+          Id="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)"
+          TopLeft="40,56" />
+        <AnnotationLayout
+          Text="2. Because there are no relationships between the tables, they can also be loaded all at the same time (concurrently)."
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="644,40"
+          Id="359e6497-7013-4467-af8a-c6ee8f7f22b2"
+          TopLeft="108,335" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente"
+          TopLeft="73,22" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Date"
+          TopLeft="309,26" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto"
+          TopLeft="543,35" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Pedido"
+          TopLeft="136,112" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda"
+          TopLeft="366,110" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="746,240"
+          Size="746,283"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)"
+          TopLeft="56,406" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="413,304">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,102"
+              Start="0,0"
+              End="0,94.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,94.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas"
+          TopLeft="240,108" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Tab Venda STG"
+          TopLeft="423,320" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date"
+          TopLeft="607,125" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Tab Venda STG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel File Dim Date">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

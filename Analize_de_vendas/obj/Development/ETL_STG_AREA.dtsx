@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/12/2023 2:35:59 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-5KFLI28"
+  DTS:CreatorName="DESKTOP-5KFLI28\Faustino"
+  DTS:DTSID="{BB95015C-549F-407C-ACC7-4C77E6F95F94}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.948.0"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{7DC776C1-6094-4D91-B083-023D3E2FDF25}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-5KFLI28\SQLEXPRESS.STG_VENDAS_FEV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{382E57AF-DE96-4688-9FB3-BA3F00BE2628}"
+      DTS:ObjectName="DESKTOP-5KFLI28\SQLEXPRESS.STG_VENDAS_FEV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-5KFLI28\SQLEXPRESS;Initial Catalog=STG_VENDAS_FEV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{382E57AF-DE96-4688-9FB3-BA3F00BE2628}DESKTOP-5KFLI28\SQLEXPRESS.STG_VENDAS_FEV;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{62e6f5a8-a7e4-4389-a0bc-aaa4f4da5ddf}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clear all previous data from ALL Staging Area tables (both Fact and Dimension)">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Delete Dim Cliente"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{bd73738f-78ef-4ed2-bc9f-722bb2a87156}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Delete Dim Cliente"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{382E57AF-DE96-4688-9FB3-BA3F00BE2628}"
+              SQLTask:SqlStatementSource="delete from stg_dim_cliente;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Delete Dim Date"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{ee112e3a-dda3-4fbf-a3f4-aeb34b2101c3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Delete Dim Date"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{382E57AF-DE96-4688-9FB3-BA3F00BE2628}"
+              SQLTask:SqlStatementSource="delete from stg_dim_date;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Delete Dim Pedido"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{50947315-4749-4275-9c68-45f82703f22a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Delete Dim Pedido"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{382E57AF-DE96-4688-9FB3-BA3F00BE2628}"
+              SQLTask:SqlStatementSource="delete from stg_dim_pedido;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Delete Dim Producto"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9c06752c-06c5-4550-9459-79e9424dc5e8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Delete Dim Producto"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{382E57AF-DE96-4688-9FB3-BA3F00BE2628}"
+              SQLTask:SqlStatementSource="delete from stg_dim_producto;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Truncate Fact Venda"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{7d14fbba-8492-4910-a092-5176ffcc995a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Truncate Fact Venda"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="4">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{382E57AF-DE96-4688-9FB3-BA3F00BE2628}"
+              SQLTask:SqlStatementSource="truncate table stg_fact_venda;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <AnnotationLayout
+          Text="### STAGING AREA ETL ###"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="179,40"
+          Id="7a44f1dd-5844-4cd7-9122-3ec8426dc174"
+          TopLeft="291,36" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Delete Dim Cliente"
+          TopLeft="30,20" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Delete Dim Date"
+          TopLeft="150,108" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Delete Dim Producto"
+          TopLeft="260,23" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Delete Dim Pedido"
+          TopLeft="512,24" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)\SQL Truncate Fact Venda"
+          TopLeft="363,110" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="746,205"
+          Size="746,248"
+          Id="Package\Clear all previous data from ALL Staging Area tables (both Fact and Dimension)"
+          TopLeft="38,86" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
