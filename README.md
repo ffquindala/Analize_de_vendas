@@ -81,6 +81,32 @@ percepção e escalávelm como se pode observar na imagem abaixo:
 
 ![Modelagem_DW](https://user-images.githubusercontent.com/80399273/219516681-169a615e-687a-4e2a-98e2-e23b9917ebd5.jpg)
 
+# Extração, Transformação e Carga (ETL) dos Dados para Staging Area
+Staging Area, serve como uma área de preparação (intermediária) antes de armazenar em DW, tem ainda como finalidade proteger o DW que erros nos dados. 
+De forma geral é na SA onde ocorre maior parte das transformações para posteriormente fazer carregamendo em DW
+
+![full all stg are table](https://user-images.githubusercontent.com/80399273/219901896-98ac5da5-bc7f-4d04-91cb-e4d32f2de0fd.png)
+
+##Load stg_dim_cliente
+
+![Load_stg_dim_cliente](https://user-images.githubusercontent.com/80399273/219901950-36f6013d-7834-475f-ac56-460473e29fe1.png)
+
+##Load stg_dim_producto
+
+![load_stg_dim_producto](https://user-images.githubusercontent.com/80399273/219901993-5ff6e214-8382-4044-9921-63f180a0099f.png)
+
+Load stg_dim_pedido
+
+![load_stg_dim_pedido](https://user-images.githubusercontent.com/80399273/219902016-f29437a2-b5a6-4f5b-b333-2fe3f2bcded5.png)
+
+Load stg_dim_date
+
+![load_stg_dim_date](https://user-images.githubusercontent.com/80399273/219902048-e53fcdd4-112f-431d-b28b-ea68a26c90fd.png)
+
+Load stg_dim_venda
+
+![load_stg_dim_vendas](https://user-images.githubusercontent.com/80399273/219902091-5a784dd3-9b90-43c4-8c11-f4182a678431.png)
+
 
 
 
