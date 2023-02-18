@@ -81,7 +81,8 @@ percepção e escalávelm como se pode observar na imagem abaixo:
 
 ![Modelagem_DW](https://user-images.githubusercontent.com/80399273/219516681-169a615e-687a-4e2a-98e2-e23b9917ebd5.jpg)
 
-# Extração, Transformação e Carga (ETL) dos Dados para Staging Area
+#  ETL dos Dados para Staging Area usanso SSIS
+
 Staging Area, serve como uma área de preparação (intermediária) antes de armazenar em DW, tem ainda como finalidade proteger o DW que erros nos dados. 
 De forma geral é na SA onde ocorre maior parte das transformações para posteriormente fazer carregamendo em DW
 
