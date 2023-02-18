@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{E94CCE37-4765-49C8-9D6A-A5EA6F1D89CD}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{FDD5EF2A-519F-4163-85FE-58F5D741478E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -659,6 +659,89 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 5]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0F9BAE95-BAD8-4FE2-A2FF-B69A6901190E}"
+      DTS:ObjectName="Flat File Connection Manager 5">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2070"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="D:\MEUS_PROJECTOS\BI_PROJECTS\Analize_de_vendas\Source_data\Vendas.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pedido"
+              DTS:DTSID="{90E60FDE-4C3E-49D9-B291-BD59F3ADD3B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cliente"
+              DTS:DTSID="{82AF2C4B-6179-497B-BC6B-45AC93289B5A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Produto"
+              DTS:DTSID="{7BA56704-2D6E-4EE3-B872-F08AE6C5CF24}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Valor Venda"
+              DTS:DTSID="{C4596DD6-5350-414F-B8A8-8BB10D8092B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quantidade Vendida"
+              DTS:DTSID="{E4C88DCB-1C5A-4423-B0E4-732CA91BE675}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Custo Envio"
+              DTS:DTSID="{E5371142-4831-4959-9BBE-E0559EE5EF70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Data Pedido"
+              DTS:DTSID="{A110C8F7-F09C-40B8-AFCD-BD8E74AE5D1F}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SOURCE DB (IMSALES)]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{2C329402-91EF-4895-8BFF-57FB4CCF6803}"
@@ -784,7 +867,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL Delete Dim Cliente"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -801,7 +884,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL Delete Dim Date"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -818,7 +901,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL Delete Dim Pedido"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -835,7 +918,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL Delete Dim Producto"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -852,7 +935,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL Truncate Fact Venda"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -891,7 +974,6 @@
           DTS:refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{9CC14A5D-20EA-49C0-83D7-33602A51F70F}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -1696,7 +1778,6 @@
           DTS:refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Date"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{4418B1DD-F561-47F0-ACCC-65CFB7CC2149}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -2195,7 +2276,6 @@
           DTS:refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Pedido"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{97E674A3-2BF8-4DF3-B7E0-84133E09FD5C}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -3409,55 +3489,6 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column"
-                  componentClassID="Microsoft.DerivedColumn"
-                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  name="Derived Column"
-                  usesDispositions="true">
-                  <inputs>
-                    <input
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Inputs[Derived Column Input]"
-                      description="Input to the Derived Column Transformation"
-                      name="Derived Column Input">
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Outputs[Derived Column Output]"
-                      description="Default Output of the Derived Column Transformation"
-                      exclusionGroup="1"
-                      name="Derived Column Output"
-                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Inputs[Derived Column Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Outputs[Derived Column Error Output]"
-                      description="Error Output of the Derived Column Transformation"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Derived Column Error Output"
-                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Inputs[Derived Column Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -3818,238 +3849,267 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Pedido"
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos"
                   componentClassID="Microsoft.DataConvert"
                   contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Data Conversion"
-                  name="Convertendo a coluna Pedido"
+                  name="Convertendo valores numericos"
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Pedido.Inputs[Data Conversion Input]"
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Inputs[Data Conversion Input]"
                       name="Data Conversion Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Pedido.Inputs[Data Conversion Input].Columns[Pedido]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Inputs[Data Conversion Input].Columns[Valor Venda]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Valor Venda"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Valor Venda]" />
+                        <inputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Inputs[Data Conversion Input].Columns[Quantidade Vendida]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Quantidade Vendida"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Quantidade Vendida]" />
+                        <inputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Inputs[Data Conversion Input].Columns[Custo Envio]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Custo Envio"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Custo Envio]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Outputs[Data Conversion Output].Columns[New_Valor Venda]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Outputs[Data Conversion Output].Columns[New_Valor Venda]"
+                          name="New_Valor Venda"
+                          precision="18"
+                          scale="4"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Valor Venda]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Outputs[Data Conversion Output].Columns[New_Quantidade Vendida]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Outputs[Data Conversion Output].Columns[New_Quantidade Vendida]"
+                          name="New_Quantidade Vendida"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Quantidade Vendida]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Outputs[Data Conversion Output].Columns[Copy of Custo Envio]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Outputs[Data Conversion Output].Columns[Copy of Custo Envio]"
+                          name="Copy of Custo Envio"
+                          precision="18"
+                          scale="4"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Custo Envio]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Convertendos campos categoricos"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Inputs[Data Conversion Input].Columns[Pedido]"
                           cachedCodepage="65001"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Pedido"
-                          cachedSortKeyPosition="1"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Pedido]" />
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Pedido.Outputs[Data Conversion Output]"
-                      exclusionGroup="1"
-                      name="Data Conversion Output"
-                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Pedido.Inputs[Data Conversion Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Pedido.Outputs[Data Conversion Output].Columns[Copy of Pedido]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          length="25"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Pedido.Outputs[Data Conversion Output].Columns[Copy of Pedido]"
-                          name="Copy of Pedido"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Pedido]}</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Pedido.Outputs[Data Conversion Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Data Conversion Error Output"
-                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Pedido.Inputs[Data Conversion Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Pedido.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Pedido.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Pedido.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Pedido.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Producto"
-                  componentClassID="Microsoft.DataConvert"
-                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Data Conversion"
-                  name="Convertendo a coluna Producto"
-                  usesDispositions="true">
-                  <inputs>
-                    <input
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Producto.Inputs[Data Conversion Input]"
-                      name="Data Conversion Input">
-                      <inputColumns>
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Pedido]" />
                         <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Producto.Inputs[Data Conversion Input].Columns[Produto]"
-                          cachedCodepage="65001"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Produto"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Produto]" />
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Producto.Outputs[Data Conversion Output]"
-                      exclusionGroup="1"
-                      name="Data Conversion Output"
-                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Producto.Inputs[Data Conversion Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Producto.Outputs[Data Conversion Output].Columns[Copy of Produto]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          length="25"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Producto.Outputs[Data Conversion Output].Columns[Copy of Produto]"
-                          name="Copy of Produto"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Produto]}</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Producto.Outputs[Data Conversion Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Data Conversion Error Output"
-                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Producto.Inputs[Data Conversion Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Producto.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Producto.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Producto.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Producto.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Converter a coluna cliente"
-                  componentClassID="Microsoft.DerivedColumn"
-                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  name="Converter a coluna cliente"
-                  usesDispositions="true">
-                  <inputs>
-                    <input
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Converter a coluna cliente.Inputs[Derived Column Input]"
-                      description="Input to the Derived Column Transformation"
-                      name="Derived Column Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Converter a coluna cliente.Inputs[Derived Column Input].Columns[Cliente]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Inputs[Data Conversion Input].Columns[Cliente]"
                           cachedCodepage="65001"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Cliente"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Cliente]" />
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Cliente]" />
+                        <inputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Inputs[Data Conversion Input].Columns[Produto]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Produto"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Produto]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Converter a coluna cliente.Outputs[Derived Column Output]"
-                      description="Default Output of the Derived Column Transformation"
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Outputs[Data Conversion Output]"
                       exclusionGroup="1"
-                      name="Derived Column Output"
-                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Converter a coluna cliente.Inputs[Derived Column Input]">
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Inputs[Data Conversion Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Converter a coluna cliente.Outputs[Derived Column Output].Columns[New_Cliente]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Outputs[Data Conversion Output].Columns[New_Pedido]"
                           dataType="wstr"
-                          errorOrTruncationOperation="Computation"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="25"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Outputs[Data Conversion Output].Columns[New_Pedido]"
+                          name="New_Pedido"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Pedido]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Outputs[Data Conversion Output].Columns[New_Cliente]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="20"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Converter a coluna cliente.Outputs[Derived Column Output].Columns[New_Cliente]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Outputs[Data Conversion Output].Columns[New_Cliente]"
                           name="New_Cliente"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">(DT_WSTR,20)#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Cliente]}</property>
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Cliente]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Outputs[Data Conversion Output].Columns[New_Producto]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="25"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Outputs[Data Conversion Output].Columns[New_Producto]"
+                          name="New_Producto"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
                             <property
                               containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">(DT_WSTR,20)Cliente</property>
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Produto]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Converter a coluna cliente.Outputs[Derived Column Error Output]"
-                      description="Error Output of the Derived Column Transformation"
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Outputs[Data Conversion Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
-                      name="Derived Column Error Output"
-                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Converter a coluna cliente.Inputs[Derived Column Input]">
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Inputs[Data Conversion Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Converter a coluna cliente.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Converter a coluna cliente.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Converter a coluna cliente.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Converter a coluna cliente.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -4079,8 +4139,8 @@
                   <connections>
                     <connection
                       refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 5]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 5]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
@@ -4220,6 +4280,28 @@
                               name="UseBinaryFormat">false</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Data Pedido]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].ExternalColumns[Data Pedido]"
+                          length="50"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Data Pedido]"
+                          name="Data Pedido"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4259,6 +4341,12 @@
                           dataType="str"
                           length="50"
                           name="Custo Envio" />
+                        <externalMetadataColumn
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].ExternalColumns[Data Pedido]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Data Pedido" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -4291,685 +4379,75 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas"
-                  componentClassID="Microsoft.Sort"
-                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-                  name="Eliminar linhas duplicadas"
-                  version="1">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                      name="EliminateDuplicates">true</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the maximum number of threads to use for sorting."
-                      expressionType="Notify"
-                      name="MaximumThreads">-1</property>
-                  </properties>
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Inputs[Sort Input]"
-                      name="Sort Input">
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Inputs[Sort Input].Columns[Pedido]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Data Conversion.Inputs[Data Conversion Input].Columns[Data Pedido]"
                           cachedCodepage="65001"
                           cachedDataType="str"
                           cachedLength="50"
-                          cachedName="Pedido"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Pedido]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">1</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Inputs[Sort Input].Columns[Cliente]"
-                          cachedCodepage="65001"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Cliente"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Cliente]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Inputs[Sort Input].Columns[Produto]"
-                          cachedCodepage="65001"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Produto"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Produto]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Inputs[Sort Input].Columns[Valor Venda]"
-                          cachedCodepage="65001"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Valor Venda"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Valor Venda]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Inputs[Sort Input].Columns[Quantidade Vendida]"
-                          cachedCodepage="65001"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Quantidade Vendida"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Quantidade Vendida]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Inputs[Sort Input].Columns[Custo Envio]"
-                          cachedCodepage="65001"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Custo Envio"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Custo Envio]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
+                          cachedName="Data Pedido"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Data Pedido]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output]"
-                      isSorted="true"
-                      name="Sort Output">
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Data Conversion.Inputs[Data Conversion Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Pedido]"
-                          codePage="65001"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Pedido]"
-                          name="Pedido"
-                          sortKeyPosition="1">
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Data Conversion.Outputs[Data Conversion Output].Columns[New_Data Pedido]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Data Conversion.Outputs[Data Conversion Output].Columns[New_Data Pedido]"
+                          name="New_Data Pedido"
+                          truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Pedido]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Cliente]"
-                          codePage="65001"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Cliente]"
-                          name="Cliente">
-                          <properties>
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Data Pedido]}</property>
                             <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Cliente]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Produto]"
-                          codePage="65001"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Produto]"
-                          name="Produto">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Produto]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Valor Venda]"
-                          codePage="65001"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Valor Venda]"
-                          name="Valor Venda">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Valor Venda]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Quantidade Vendida]"
-                          codePage="65001"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Quantidade Vendida]"
-                          name="Quantidade Vendida">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Quantidade Vendida]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Custo Envio]"
-                          codePage="65001"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Custo Envio]"
-                          name="Custo Envio">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output].Columns[Custo Envio]}</property>
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source"
-                  componentClassID="Microsoft.ExcelSource"
-                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                  description="Excel Source"
-                  name="Excel Source"
-                  usesDispositions="true"
-                  version="1">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">Sheet1$</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                    <property
-                      dataType="System.String"
-                      description="The variable that contains the SQL command to be executed."
-                      name="SqlCommandVariable"></property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      name="AccessMode"
-                      typeConverter="AccessMode">0</property>
-                    <property
-                      dataType="System.String"
-                      description="The mapping from parameters in the SQL command to variables."
-                      name="ParameterMapping"></property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
-                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <outputs>
                     <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output]"
-                      name="Excel Source Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[DateDimKey]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[DateDimKey]"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[DateDimKey]"
-                          name="DateDimKey"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[Proper_Date]"
-                          dataType="date"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[Proper_Date]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[Proper_Date]"
-                          name="Proper_Date"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[month_id]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[month_id]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[month_id]"
-                          name="month_id"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[month_desc]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[month_desc]"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[month_desc]"
-                          name="month_desc"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[qurater_id]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[qurater_id]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[qurater_id]"
-                          name="qurater_id"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[qurater_desc]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[qurater_desc]"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[qurater_desc]"
-                          name="qurater_desc"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[year_id]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[year_id]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[year_id]"
-                          name="year_id"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[day_number_of_week]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[day_number_of_week]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[day_number_of_week]"
-                          name="day_number_of_week"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[day_of_week_desc]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[day_of_week_desc]"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[day_of_week_desc]"
-                          name="day_of_week_desc"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[day_number_of_month ]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[day_number_of_month ]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[day_number_of_month ]"
-                          name="day_number_of_month "
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[day_number_of_year]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[day_number_of_year]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[day_number_of_year]"
-                          name="day_number_of_year"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[week_number_of_year]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[week_number_of_year]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[week_number_of_year]"
-                          name="week_number_of_year"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[year_month]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[year_month]"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].Columns[year_month]"
-                          name="year_month"
-                          truncationRowDisposition="FailComponent" />
-                      </outputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[DateDimKey]"
-                          dataType="wstr"
-                          length="255"
-                          name="DateDimKey" />
-                        <externalMetadataColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[Proper_Date]"
-                          dataType="date"
-                          name="Proper_Date" />
-                        <externalMetadataColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[month_id]"
-                          dataType="r8"
-                          name="month_id" />
-                        <externalMetadataColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[month_desc]"
-                          dataType="wstr"
-                          length="255"
-                          name="month_desc" />
-                        <externalMetadataColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[qurater_id]"
-                          dataType="r8"
-                          name="qurater_id" />
-                        <externalMetadataColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[qurater_desc]"
-                          dataType="wstr"
-                          length="255"
-                          name="qurater_desc" />
-                        <externalMetadataColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[year_id]"
-                          dataType="r8"
-                          name="year_id" />
-                        <externalMetadataColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[day_number_of_week]"
-                          dataType="r8"
-                          name="day_number_of_week" />
-                        <externalMetadataColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[day_of_week_desc]"
-                          dataType="wstr"
-                          length="255"
-                          name="day_of_week_desc" />
-                        <externalMetadataColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[day_number_of_month ]"
-                          dataType="r8"
-                          name="day_number_of_month " />
-                        <externalMetadataColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[day_number_of_year]"
-                          dataType="r8"
-                          name="day_number_of_year" />
-                        <externalMetadataColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[week_number_of_year]"
-                          dataType="r8"
-                          name="week_number_of_year" />
-                        <externalMetadataColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Output].ExternalColumns[year_month]"
-                          dataType="wstr"
-                          length="255"
-                          name="year_month" />
-                      </externalMetadataColumns>
-                    </output>
-                    <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output]"
+                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
                       isErrorOut="true"
-                      name="Excel Source Error Output">
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Data Conversion.Inputs[Data Conversion Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[DateDimKey]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[DateDimKey]"
-                          name="DateDimKey" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[Proper_Date]"
-                          dataType="date"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[Proper_Date]"
-                          name="Proper_Date" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[month_id]"
-                          dataType="r8"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[month_id]"
-                          name="month_id" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[month_desc]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[month_desc]"
-                          name="month_desc" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[qurater_id]"
-                          dataType="r8"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[qurater_id]"
-                          name="qurater_id" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[qurater_desc]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[qurater_desc]"
-                          name="qurater_desc" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[year_id]"
-                          dataType="r8"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[year_id]"
-                          name="year_id" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[day_number_of_week]"
-                          dataType="r8"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[day_number_of_week]"
-                          name="day_number_of_week" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[day_of_week_desc]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[day_of_week_desc]"
-                          name="day_of_week_desc" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[day_number_of_month ]"
-                          dataType="r8"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[day_number_of_month ]"
-                          name="day_number_of_month " />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[day_number_of_year]"
-                          dataType="r8"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[day_number_of_year]"
-                          name="day_number_of_year" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[week_number_of_year]"
-                          dataType="r8"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[week_number_of_year]"
-                          name="week_number_of_year" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[year_month]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[year_month]"
-                          name="year_month" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Lookup"
-                  componentClassID="Microsoft.Lookup"
-                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-                  name="Lookup"
-                  usesDispositions="true"
-                  version="6">
-                  <properties>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the SQL statement that generates the lookup table."
-                      expressionType="Notify"
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                      expressionType="Notify"
-                      name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the type of connection used to access the reference dataset."
-                      name="ConnectionType"
-                      typeConverter="LookupConnectionType">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the cache type of the lookup table."
-                      name="CacheType"
-                      typeConverter="CacheType">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                      name="NoMatchBehavior"
-                      typeConverter="LookupNoMatchBehavior">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                      name="NoMatchCachePercentage">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                      name="MaxMemoryUsage">25</property>
-                    <property
-                      dataType="System.Int64"
-                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                      name="MaxMemoryUsage64">25</property>
-                    <property
-                      dataType="System.String"
-                      description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml"></property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap"></property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                      name="TreatDuplicateKeysAsError">false</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Lookup.Connections[OleDbConnection]"
-                      description="Connection manager used to access lookup data."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Lookup.Inputs[Lookup Input]"
-                      name="Lookup Input">
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Lookup.Outputs[Lookup Match Output]"
-                      errorOrTruncationOperation="Lookup"
-                      errorRowDisposition="FailComponent"
-                      exclusionGroup="1"
-                      name="Lookup Match Output"
-                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Lookup.Inputs[Lookup Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Lookup.Outputs[Lookup No Match Output]"
-                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                      exclusionGroup="1"
-                      name="Lookup No Match Output"
-                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Lookup.Inputs[Lookup Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Lookup.Outputs[Lookup Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Lookup Error Output"
-                      synchronousInputId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Lookup.Inputs[Lookup Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -5015,7 +4493,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">3</property>
+                      typeConverter="AccessMode">0</property>
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -5027,7 +4505,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                      name="FastLoadOptions"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -5055,51 +4533,49 @@
                           cachedLength="20"
                           cachedName="New_Cliente"
                           externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fk_cliente]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Converter a coluna cliente.Outputs[Derived Column Output].Columns[New_Cliente]" />
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Outputs[Data Conversion Output].Columns[New_Cliente]" />
                         <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Pedido]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[New_Pedido]"
                           cachedDataType="wstr"
                           cachedLength="25"
-                          cachedName="Copy of Pedido"
+                          cachedName="New_Pedido"
                           externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fk_pedido]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Pedido.Outputs[Data Conversion Output].Columns[Copy of Pedido]" />
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Outputs[Data Conversion Output].Columns[New_Pedido]" />
                         <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Produto]"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[New_Producto]"
                           cachedDataType="wstr"
                           cachedLength="25"
-                          cachedName="Copy of Produto"
+                          cachedName="New_Producto"
                           externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fk_producto]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Producto.Outputs[Data Conversion Output].Columns[Copy of Produto]" />
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Outputs[Data Conversion Output].Columns[New_Producto]" />
                         <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Proper_Date]"
-                          cachedDataType="date"
-                          cachedName="Proper_Date"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[New_Data Pedido]"
+                          cachedDataType="dbDate"
+                          cachedName="New_Data Pedido"
                           externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fk_date]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\243:invalid" />
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Data Conversion.Outputs[Data Conversion Output].Columns[New_Data Pedido]" />
                         <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Quantidade Vendida]"
-                          cachedCodepage="65001"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Quantidade Vendida"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[New_Quantidade Vendida]"
+                          cachedDataType="i4"
+                          cachedName="New_Quantidade Vendida"
                           externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[quantidade]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Quantidade Vendida]" />
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Outputs[Data Conversion Output].Columns[New_Quantidade Vendida]" />
                         <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Custo Envio]"
-                          cachedCodepage="65001"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Custo Envio"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Custo Envio]"
+                          cachedDataType="numeric"
+                          cachedName="Copy of Custo Envio"
+                          cachedPrecision="18"
+                          cachedScale="4"
                           externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[custo_envio]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Custo Envio]" />
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Outputs[Data Conversion Output].Columns[Copy of Custo Envio]" />
                         <inputColumn
-                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Valor Venda]"
-                          cachedCodepage="65001"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Valor Venda"
+                          refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[New_Valor Venda]"
+                          cachedDataType="numeric"
+                          cachedName="New_Valor Venda"
+                          cachedPrecision="18"
+                          cachedScale="4"
                           externalMetadataColumnId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[valor_venda]"
-                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output].Columns[Valor Venda]" />
+                          lineageId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Outputs[Data Conversion Output].Columns[New_Valor Venda]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5170,34 +4646,24 @@
               <paths>
                 <path
                   refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda.Paths[Data Conversion Output]"
-                  endId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Producto.Inputs[Data Conversion Input]"
+                  endId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Inputs[Data Conversion Input]"
                   name="Data Conversion Output"
-                  startId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Pedido.Outputs[Data Conversion Output]" />
+                  startId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Outputs[Data Conversion Output]" />
                 <path
                   refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda.Paths[Data Conversion Output1]"
+                  endId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda.Paths[Data Conversion Output2]"
                   endId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   name="Data Conversion Output"
-                  startId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Producto.Outputs[Data Conversion Output]" />
-                <path
-                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda.Paths[Derived Column Output]"
-                  endId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Pedido.Inputs[Data Conversion Input]"
-                  name="Derived Column Output"
-                  startId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Converter a coluna cliente.Outputs[Derived Column Output]" />
+                  startId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Data Conversion.Outputs[Data Conversion Output]" />
                 <path
                   refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda.Paths[Flat File Source Output]"
-                  endId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Inputs[Sort Input]"
+                  endId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos.Inputs[Data Conversion Input]"
                   name="Flat File Source Output"
                   startId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas.Outputs[Flat File Source Output]" />
-                <path
-                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda.Paths[Lookup Match Output]"
-                  endId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Converter a coluna cliente.Inputs[Derived Column Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Lookup.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda.Paths[Sort Output]"
-                  endId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Lookup.Inputs[Lookup Input]"
-                  name="Sort Output"
-                  startId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas.Outputs[Sort Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -5261,23 +4727,23 @@
         <NodeLayout
           Size="175,42"
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente"
-          TopLeft="71,20" />
+          TopLeft="51,44" />
         <NodeLayout
           Size="165,42"
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Date"
-          TopLeft="309,26" />
+          TopLeft="289,49" />
         <NodeLayout
           Size="175,42"
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Pedido"
-          TopLeft="136,113" />
+          TopLeft="116,137" />
         <NodeLayout
           Size="185,42"
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto"
-          TopLeft="527,28" />
+          TopLeft="507,53" />
         <NodeLayout
           Size="173,42"
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda"
-          TopLeft="365,108" />
+          TopLeft="344,132" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -5320,7 +4786,7 @@
           FontInfo="{assembly:Null}"
           Size="644,40"
           Id="359e6497-7013-4467-af8a-c6ee8f7f22b2"
-          TopLeft="108,336" />
+          TopLeft="107,335" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -5413,7 +4879,7 @@
           Text="Load Dim Pedido"
           ParentId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Cliente"
           FontInfo="{assembly:Null}"
-          Size="120,60"
+          Size="120,40"
           Id="acd04df0-890f-4886-9454-cb1a149de94f"
           TopLeft="306,26" />
       </GraphLayout>
@@ -5442,13 +4908,13 @@
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Date\Source Excel File Dim Date"
           TopLeft="178,103" />
         <NodeLayout
-          Size="233,42"
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Date\Convertendo o campo descr mês"
-          TopLeft="157,222" />
-        <NodeLayout
           Size="162,42"
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Date\Destino Dim Date"
           TopLeft="189,339" />
+        <NodeLayout
+          Size="233,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Date\Convertendo o campo descr mês"
+          TopLeft="157,222" />
         <EdgeLayout
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Date.Paths[Excel Source Output]"
           TopLeft="277,145">
@@ -5535,21 +5001,21 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="171,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Pedido\Destino Dim Pedido"
+          TopLeft="276,424" />
+        <NodeLayout
           Size="168,42"
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Pedido\Source Dim Pedido"
           TopLeft="284,87" />
-        <NodeLayout
-          Size="215,42"
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Pedido\Eliminando dados duplicados"
-          TopLeft="260,310" />
         <NodeLayout
           Size="211,42"
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Pedido\Convertendo Modo de Envio"
           TopLeft="273,208" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Pedido\Destino Dim Pedido"
-          TopLeft="276,424" />
+          Size="215,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Pedido\Eliminando dados duplicados"
+          TopLeft="260,310" />
         <EdgeLayout
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Pedido.Paths[Flat File Source Output]"
           TopLeft="368,129">
@@ -5646,7 +5112,7 @@
           Text="Load Dim Pedido"
           ParentId="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Pedido"
           FontInfo="{assembly:Null}"
-          Size="120,60"
+          Size="120,40"
           Id="214abc76-6946-4b4f-bbce-82d6e28209f3"
           TopLeft="301,18" />
       </GraphLayout>
@@ -5675,107 +5141,35 @@
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\CSV File Stg_Dim_Producto"
           TopLeft="211,63" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Derived Column"
-          TopLeft="5.5,5.5" />
+          Size="171,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination"
+          TopLeft="393,424" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion"
+          TopLeft="405,333" />
         <NodeLayout
           Size="224,42"
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Converter o nome do producto"
           TopLeft="429,233" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination"
-          TopLeft="409,518" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Data Conversion"
-          TopLeft="421,409" />
-        <EdgeLayout
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto.Paths[Derived Column Output]"
-          TopLeft="541,275">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-42,134"
-              Start="0,0"
-              End="-42,126.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,63"
-                    Point2="0,67"
-                    Point3="-4,67" />
-                  <mssgle:LineSegment
-                    End="-38,67" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-38,67"
-                    Point2="-42,67"
-                    Point3="-42,71" />
-                  <mssgle:LineSegment
-                    End="-42,126.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto.Paths[Data Conversion Output]"
-          TopLeft="496.75,451">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,67"
-              Start="0,0"
-              End="0,59.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,59.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="98,42"
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\Sort"
           TopLeft="302,157" />
         <EdgeLayout
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto.Paths[Flat File Source Output]"
-          TopLeft="315,105">
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto.Paths[Data Conversion Output]"
+          TopLeft="480.75,375">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="36,52"
+              EndConnector="0,49"
               Start="0,0"
-              End="36,44.5">
+              End="0,41.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22"
-                    Point2="0,26"
-                    Point3="4,26" />
-                  <mssgle:LineSegment
-                    End="32,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="32,26"
-                    Point2="36,26"
-                    Point3="36,30" />
-                  <mssgle:LineSegment
-                    End="36,44.5" />
+                    End="0,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5818,260 +5212,249 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto.Paths[Flat File Source Output]"
+          TopLeft="315,105">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36,52"
+              Start="0,0"
+              End="36,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22"
+                    Point2="0,26"
+                    Point3="4,26" />
+                  <mssgle:LineSegment
+                    End="32,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32,26"
+                    Point2="36,26"
+                    Point3="36,30" />
+                  <mssgle:LineSegment
+                    End="36,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto.Paths[Derived Column Output]"
+          TopLeft="541,275">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-58,58"
+              Start="0,0"
+              End="-58,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="-4,29" />
+                  <mssgle:LineSegment
+                    End="-54,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-54,29"
+                    Point2="-58,29"
+                    Point3="-58,33" />
+                  <mssgle:LineSegment
+                    End="-58,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="113,42"
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Lookup"
-          TopLeft="564,261" />
-        <NodeLayout
-          Size="155,44"
+          Size="196,44"
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\CSV File Vendas"
-          TopLeft="225,38" />
+          TopLeft="240,30" />
         <NodeLayout
-          Size="200,42"
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Eliminar linhas duplicadas"
-          TopLeft="365,143" />
-        <NodeLayout
-          Size="227,42"
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Producto"
-          TopLeft="240,472" />
+          Size="239,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendos campos categoricos"
+          TopLeft="258,124" />
+        <EdgeLayout
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda.Paths[Flat File Source Output]"
+          TopLeft="338,74">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="39.5,50"
+              Start="0,0"
+              End="39.5,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="35.5,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.5,25"
+                    Point2="39.5,25"
+                    Point3="39.5,29" />
+                  <mssgle:LineSegment
+                    End="39.5,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <NodeLayout
           Size="171,42"
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination"
-          TopLeft="556,520" />
+          TopLeft="217,360" />
         <NodeLayout
-          Size="202,42"
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Converter a coluna cliente"
-          TopLeft="251,324" />
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source"
-          TopLeft="696,38" />
-        <NodeLayout
-          Size="216,42"
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo a coluna Pedido"
-          TopLeft="479,373" />
+          Size="227,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Convertendo valores numericos"
+          TopLeft="274,195" />
         <EdgeLayout
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda.Paths[Data Conversion Output]"
-          TopLeft="587,415">
+          TopLeft="377.5,166">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-233.5,57"
+              EndConnector="10,29"
               Start="0,0"
-              End="-233.5,49.5">
+              End="10,21.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5" />
+                    End="0,10.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.5"
-                    Point2="0,28.5"
-                    Point3="-4,28.5" />
+                    Point1="0,10.5"
+                    Point2="0,14.5"
+                    Point3="4,14.5" />
                   <mssgle:LineSegment
-                    End="-229.5,28.5" />
+                    End="6,14.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-229.5,28.5"
-                    Point2="-233.5,28.5"
-                    Point3="-233.5,32.5" />
+                    Point1="6,14.5"
+                    Point2="10,14.5"
+                    Point3="10,18.5" />
                   <mssgle:LineSegment
-                    End="-233.5,49.5" />
+                    End="10,21.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda.Paths[Sort Output]"
-          TopLeft="465,185">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="155.5,76"
-              Start="0,0"
-              End="155.5,68.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34"
-                    Point2="0,38"
-                    Point3="4,38" />
-                  <mssgle:LineSegment
-                    End="151.5,38" />
-                  <mssgle:CubicBezierSegment
-                    Point1="151.5,38"
-                    Point2="155.5,38"
-                    Point3="155.5,42" />
-                  <mssgle:LineSegment
-                    End="155.5,68.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda.Paths[Lookup Match Output]"
-          TopLeft="564,282">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-111,57.3333333333333"
-              Start="0,0"
-              End="-103.5,57.3333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-60.1559633027523,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-60.1559633027523,0"
-                    Point2="-64.1559633027523,0"
-                    Point3="-64.1559633027523,4" />
-                  <mssgle:LineSegment
-                    End="-64.1559633027523,53.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-64.1559633027523,53.3333333333333"
-                    Point2="-64.1559633027523,57.3333333333333"
-                    Point3="-68.1559633027523,57.3333333333333" />
-                  <mssgle:LineSegment
-                    End="-103.5,57.3333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-112.347350021502,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda.Paths[Flat File Source Output]"
-          TopLeft="302.5,82">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="162.5,61"
-              Start="0,0"
-              End="162.5,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.5"
-                    Point2="0,30.5"
-                    Point3="4,30.5" />
-                  <mssgle:LineSegment
-                    End="158.5,30.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="158.5,30.5"
-                    Point2="162.5,30.5"
-                    Point3="162.5,34.5" />
-                  <mssgle:LineSegment
-                    End="162.5,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda.Paths[Derived Column Output]"
-          TopLeft="453,345">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="26,49"
-              Start="0,0"
-              End="18.5,49">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="9,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="9,0"
-                    Point2="13,0"
-                    Point3="13,4" />
-                  <mssgle:LineSegment
-                    End="13,45" />
-                  <mssgle:CubicBezierSegment
-                    Point1="13,45"
-                    Point2="13,49"
-                    Point3="17,49" />
-                  <mssgle:LineSegment
-                    End="18.5,49" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Data Conversion"
+          TopLeft="381,284" />
         <EdgeLayout
           Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda.Paths[Data Conversion Output1]"
-          TopLeft="467,493">
+          TopLeft="387.5,237">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="89,48"
+              EndConnector="71.5,47"
               Start="0,0"
-              End="81.5,48">
+              End="71.5,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="40.5,0" />
+                    End="0,19.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="40.5,0"
-                    Point2="44.5,0"
-                    Point3="44.5,4" />
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="4,23.5" />
                   <mssgle:LineSegment
-                    End="44.5,44" />
+                    End="67.5,23.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="44.5,44"
-                    Point2="44.5,48"
-                    Point3="48.5,48" />
+                    Point1="67.5,23.5"
+                    Point2="71.5,23.5"
+                    Point3="71.5,27.5" />
                   <mssgle:LineSegment
-                    End="81.5,48" />
+                    End="71.5,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="27.5,-22,34,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda.Paths[Data Conversion Output2]"
+          TopLeft="459,326">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-156.5,34"
+              Start="0,0"
+              End="-156.5,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13"
+                    Point2="0,17"
+                    Point3="-4,17" />
+                  <mssgle:LineSegment
+                    End="-152.5,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-152.5,17"
+                    Point2="-156.5,17"
+                    Point3="-156.5,21" />
+                  <mssgle:LineSegment
+                    End="-156.5,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6079,32 +5462,6 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Fact Venda\Excel Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load all Staging Area tables (both Facts and Dimensions)\DF Load Dim Producto\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
