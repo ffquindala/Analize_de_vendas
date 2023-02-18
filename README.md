@@ -2,7 +2,7 @@
 
 # Objectivo do Projecto
 
-O objectivo deste projecto é desenvolver uma solução completa de Business Intelligence (BI), aplicando as principais etapas de uma solucação BI.
+O objectivo deste projecto é desenvolver uma solução completa de Business Intelligence (BI), aplicando as principais etapas de uma solução BI.
 Desde a definição e entedimento do problema, processo de ETL e Visualização de dados.
 
 # Ferramentas utilizadas
