@@ -15,6 +15,7 @@ USE [DW_VENDAS_FEV];
 GO
 
 /* the DW AREA Dimension table for: CLIENTE */
+
 CREATE TABLE dim_cliente
 (
 	sk_cliente		INT IDENTITY (1, 1) PRIMARY KEY,

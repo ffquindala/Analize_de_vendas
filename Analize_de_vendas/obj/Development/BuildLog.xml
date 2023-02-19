@@ -2,18 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Analize_de_vendas</Name>
-    <LastWriteTime>2023-02-18T20:03:23.8487259Z</LastWriteTime>
+    <LastWriteTime>2023-02-18T23:49:14.498733Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>ETL_STG_AREA.dtsx</Name>
-      <LastWriteTime>2023-02-18T20:12:34.4116819Z</LastWriteTime>
+      <LastWriteTime>2023-02-18T21:35:12.6507003Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ETL_DW.dtsx</Name>
-      <LastWriteTime>2023-02-17T00:00:58.4438265Z</LastWriteTime>
+      <LastWriteTime>2023-02-19T01:33:32.2525083Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
