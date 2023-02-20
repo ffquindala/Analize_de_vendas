@@ -1,4 +1,4 @@
-# KPI Analisys - Analize de Vendas
+# KPI Analiys - Analize de Vendas
 
 # Objectivo do Projecto
 
