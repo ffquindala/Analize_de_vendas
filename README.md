@@ -79,6 +79,9 @@ percepção e escalávelm como se pode observar na imagem abaixo:
 
 ![Modelagem_DW](https://user-images.githubusercontent.com/80399273/219516681-169a615e-687a-4e2a-98e2-e23b9917ebd5.jpg)
 
+
+![diagrma_dw](https://user-images.githubusercontent.com/80399273/220164254-1af461b9-8753-4d78-8e07-34b73f45fba6.png)
+
 #  ETL dos Dados para Staging Area usando SSIS
 
 Staging Area, serve como uma área de preparação (intermediária) antes de armazenar em DW, tem ainda como finalidade proteger o DW que erros nos dados. 
