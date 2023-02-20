@@ -29,11 +29,9 @@ Visualização: Power BI Desktop
 
 •	6 Armazenamento em Data warehouse usando SSIS
 
-•	6 Carga dos Dados para o Power BI
+•	7 Carga dos Dados no o Power BI
 
-•	7 Criação de Realatórios e/ou Dashbords
-
-•	8 Análise dos dados no Power BI
+•	8 Análise dos dados no Power BI Dashbord
 
 •	9 Conclusão
 
@@ -108,7 +106,33 @@ Load stg_dim_venda
 
 ![load_stg_dim_vendas](https://user-images.githubusercontent.com/80399273/219902091-5a784dd3-9b90-43c4-8c11-f4182a678431.png)
 
+# Armazenamento em Data warehouse usando SSIS
+
+A pois a transformação na SA, os dados são armazenados em DW para a posterior análise.
+
+![full load dw dim](https://user-images.githubusercontent.com/80399273/220125743-bcbeabbf-0aca-49e5-b407-92243c86581f.png)
+
+![load_ful_dim_fact_dw](https://user-images.githubusercontent.com/80399273/220125773-859cebbd-b10f-4608-898f-b2201cb7044c.png)
+
+# Carga dos Dados no Power BI 
+
+Nessa fase os dados são carregados para uma ferramenta de dataviz no caso PowerBI que intrerpreta os dados tal como a fonte (DW).
+
+![diagrma_dw](https://user-images.githubusercontent.com/80399273/220126541-ab68f210-4b28-40db-b33a-3e0fd0190aff.png)
+
+# Análise dos dados no Power BI Dashbord
+
+Como o objectivo principal é dar resposta de forma iterativa os dashbords facilitam o processo de entendimento, as respostas de négocio se podem
+ver respondidas no dashbord.
+
+![powerBI_dash](https://user-images.githubusercontent.com/80399273/220126991-ad717be2-3c3e-49dd-ba4f-702cf6dbbf57.png)
+
+# Conclusão
+
+Foram cumprimdas as principais etapas de u projecto de BI (poderão ser mais complexas), porém em suma, são estas.
+O processo de ETL é extreamamente relevante para uma solução BI, responder as PN é fundamental, pois o BI actua directamente na tomada de decisão.
 
 
+Muito Obrigado.
 
-
+Eng. Faustino Quindala, MSc.
