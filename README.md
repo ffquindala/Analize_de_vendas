@@ -133,7 +133,7 @@ ver respondidas no dashbord.
 # Conclusão
 
 Foram cumprimdas as principais etapas de um projecto de BI (poderão ser mais complexas), porém, em suma, são estas.
-O processo de ETL é extreamamente relevante para uma solução BI, responder as PN é fundamental, pois o BI actua directamente na tomada de decisão.
+O processo de ETL é extreamamente relevante para uma solução BI, responder as PN é fundamental, pois o BI atua directamente na tomada de decisão.
 
 
 Muito Obrigado.
