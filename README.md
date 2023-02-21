@@ -37,8 +37,8 @@ Visualização: Power BI Desktop
 
 # Entender o Problema de Negócio
 
-A partir dos dados de venda de uma empresa de venda ratalhista nos é forncido um conjinto de dados desdes seus productos, pedidos, clientes, vendas
-que foram gerados a partir do sue sistema OLTP, com necessidade de uma profunda análise e construção de uma sistema OLAP para facilitar o prcesso 
+A partir dos dados de venda de uma empresa de venda ratalhista nos é fornecido um conjunto de dados desde seus productos, pedidos, clientes, vendas
+que foram gerados a partir do sue sistema OLTP, com necessidade de uma profunda análise e construção de um sistema OLAP para facilitar o prcesso 
 de tomada de decisão usando as ferramentas de BI.
 
 # Perguntas do Negócio
@@ -66,8 +66,8 @@ pergunta 10 - Que interferência tiveram os mercados para a sustentabilidade da 
 
 # Modelagem do projecto
 
-A modelagem consiste na ilustração gráfica do funcionamemnto de qualque sistema de informação, para facilitar o seu entendido e funcionamento
-por parte de quem alheio ao sistema e ajuda na manuntenção do mesmo para futuras escalabidade.
+A modelagem consiste na ilustração gráfica do funcionamento de qualquer sistema de informação, para facilitar o seu entendido e funcionamento,
+por parte de quem é alheio ao sistema e ajuda na manuntenção do mesmo para futuras escalabilidade.
 A imagem abaixo ilustra o funcionamento desde projecto em particular.
 
 ![modelagem_analise_vendas](https://user-images.githubusercontent.com/80399273/218474813-e7056f0d-212e-4134-b177-145fe77b4b61.png)
@@ -75,7 +75,7 @@ A imagem abaixo ilustra o funcionamento desde projecto em particular.
 # Modelagem do Data Warehouse
 
 A modelagem do DW deste projecto seguiu o padrão conhecido como "modelo em estrela ou star schema" baseado em dimensões e factos, um modelo de fácil 
-percepção e escalávelm como se pode observar na imagem abaixo:
+percepção e facilmente escalável como se pode observar na imagem abaixo:
 
 ![Modelagem_DW](https://user-images.githubusercontent.com/80399273/219516681-169a615e-687a-4e2a-98e2-e23b9917ebd5.jpg)
 
@@ -84,8 +84,8 @@ percepção e escalávelm como se pode observar na imagem abaixo:
 
 #  ETL dos Dados para Staging Area usando SSIS
 
-Staging Area, serve como uma área de preparação (intermediária) antes de armazenar em DW, tem ainda como finalidade proteger o DW que erros nos dados. 
-De forma geral é na SA onde ocorre maior parte das transformações para posteriormente fazer carregamendo em DW
+Staging Area, serve como uma área de preparação (intermediária) antes de armazenar em DW, tem ainda como finalidade proteger o DW de erros nos dados. 
+De forma geral é na SA onde ocorre maior parte das transformações para posteriormente fazer carregamendo em DW.
 
 ![full all stg are table](https://user-images.githubusercontent.com/80399273/219901896-98ac5da5-bc7f-4d04-91cb-e4d32f2de0fd.png)
 
@@ -111,7 +111,7 @@ Load stg_dim_venda
 
 # Armazenamento em Data warehouse usando SSIS
 
-A pois a transformação na SA, os dados são armazenados em DW para a posterior análise.
+Após a transformação na SA, os dados são armazenados em DW para a posterior análise.
 
 ![full load dw dim](https://user-images.githubusercontent.com/80399273/220125743-bcbeabbf-0aca-49e5-b407-92243c86581f.png)
 
@@ -132,7 +132,7 @@ ver respondidas no dashbord.
 
 # Conclusão
 
-Foram cumprimdas as principais etapas de u projecto de BI (poderão ser mais complexas), porém em suma, são estas.
+Foram cumprimdas as principais etapas de um projecto de BI (poderão ser mais complexas), porém, em suma, são estas.
 O processo de ETL é extreamamente relevante para uma solução BI, responder as PN é fundamental, pois o BI actua directamente na tomada de decisão.
 
 
